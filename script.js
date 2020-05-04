@@ -1,2 +1,15 @@
-let btn = document.querySelector("#btn"),
-  img = document.querySelector("#photo");
+// $("#btn").click(function () {
+//   $getJSON("https://aws.random.cat/meow").done(function (data) {
+//     $("#photo").attr("src", data.file);
+//   });
+// });
+
+$("#btn").click(function () {
+  $.getJSON("https://aws.random.cat/meow")
+    .done(function (data) {
+      $("#photo").attr("src", data.file);
+    })
+    .fail(function () {
+      alert("REQUEST IS NOT PAWSIBBLE");
+    });
+});
